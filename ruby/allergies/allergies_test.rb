@@ -42,14 +42,13 @@ class AllergiesTest < MiniTest::Unit::TestCase
   end
 
   def test_allergic_to_lots_of_stuff
-    skip
     allergies = Allergies.new(248)
     expected = %w(strawberries tomatoes chocolate pollen cats)
     assert_equal expected, allergies.list
   end
 
   def test_allergic_to_everything
-    skip
+
     allergies = Allergies.new(255)
     # rubocop:disable Metrics/LineLength
     expected = %w(eggs peanuts shellfish strawberries tomatoes chocolate pollen cats)
@@ -57,7 +56,7 @@ class AllergiesTest < MiniTest::Unit::TestCase
   end
 
   def test_ignore_non_allergen_score_parts
-    skip
+
     allergies = Allergies.new(509)
     expected = %w(eggs shellfish strawberries tomatoes chocolate pollen cats)
     assert_equal expected, allergies.list
